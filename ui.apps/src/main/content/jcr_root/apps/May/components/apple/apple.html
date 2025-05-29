@@ -25,4 +25,48 @@
           </sly>
     </sly>
 
+    Data-sly-Test
+
+    <div data-sly-test=${10==10}>
+
+    <h1>Data coming from the Test block </h1>
+    
+    </div>
+
+    <div data-sly-include="lavanya.html"></div>
+
+   <div data-sly-resource="${'footer' @ resourceType='May/components/footer'}"></div>
+
+   <div data-sly-set.items="${['java','js','reactjs']}" </div>
+
+    <ul data-sly-list="${items}">
+
+       <li> ${item} </li>
+
+   </ul>
+
+   <div data-sly-template.writer="${ @para1, para2, para3, para4}">
+                  <h1> ${para1} </h1>
+                   <h1> ${para2} </h1>
+                   <h1> ${para3} </h1>
+                   <h1> ${para4} </h1>
+                  </div>
+<div data-sly-call="${writer @para1='1000', para2='900', para3='800', para4='700' }"></div>
+
+<p data-sly-text="${properites.jcr:description}">Lorem ipsum</p> 
+
+<div data-sly-unwrap>  Surge</div> <br>
+
+<sly> DemoText</sly>
+
+<div title="Lorem Ipsum" data-sly-attribute.title="${40==40}">Demo</div>
+
+<h1 data-sly-element=${titlelevel}>text</h1>
+
+
+
+
+
+
+
 
