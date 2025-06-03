@@ -1,0 +1,57 @@
+<sly data-sly-use.model="com.adobe.aem.may.batch.core.models.TabsModel">
+
+Tab 1 data
+
+<div>
+  <h2>Text: ${model.text}</h2>
+  <p>Description: ${model.des}</p>
+  <p>Number: ${model.num}</p>
+  <p>Color: 
+  
+</p>
+
+  <h3>Books:</h3>
+  <ul>
+    <sly data-sly-list.book="${model.bookdetails}">
+      <li>
+        <strong>Name:</strong> ${book.bookname} <br/>
+        <strong>Publish Date:</strong> ${book.date} <br/>
+        <strong>Author:</strong> ${book.author} <br/>
+
+        <h4>Publication Details:</h4>
+        <ul>
+          <sly data-sly-list.pub="${book.publicationdetails}">
+            <li>
+              <strong>Publication Name:</strong> ${pub.publicationname} <br/>
+              <strong>Published Year:</strong> ${pub.publishedyear} <br/>
+              <strong>Edition:</strong> ${pub.edition}
+            </li>
+          </sly>
+        </ul>
+      </li>
+    </sly>
+  </ul>
+
+Tabs 2 data 
+  <h3>Product Name: ${model.productname}</h3>
+
+  <h3>Product Details:</h3>
+  <ul>
+    <sly data-sly-list.prod="${model.productdetails}">
+      <li>
+        <strong>Source:</strong> ${prod.source} <br/>
+        <strong>Manufacture Date:</strong> ${prod.manufacturedate} <br/>
+
+        <h4>Company Details:</h4>
+        <ul>
+          <sly data-sly-list.comp="${prod.companydetails}">
+            <li>
+              <strong>Company Name:</strong> ${comp.companyname} <br/>
+              <strong>Expiry Date:</strong> ${comp.expirydate}
+            </li>
+          </sly>
+        </ul>
+      </li>
+    </sly>
+  </ul>
+</div>

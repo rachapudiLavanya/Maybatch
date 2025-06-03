@@ -5,50 +5,79 @@
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-            <column
+            <title
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/container">
-                <items jcr:primaryType="nt:unstructured">
-                    <text
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Text"
-                        name="./text"/>
-                    <des
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                        fieldLabel="Des"
-                        name="./des"/>
-                    <number
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
-                        fieldLabel="Number"
-                        name="./num"/>
-                    <checkbox
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                        fieldLabel="checkbox"/>
-                    <datepicker
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
-                        fieldLabel="Datepicker"/>
-                    <colorpicker
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
-                        fieldLabel="Colorpicker"/>
-                    <fileupload
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/fileupload"
-                        fieldLabel="title">
-                        <pathfield
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="ArticleTitle"
+                name="./articletitle"/>
+            <des
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="ArticleDescription"
+                name="./articledescription"/>
+            <num
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                fieldLabel="ArticleNum"
+                name="./articlenum"/>
+            <multifield
+                jcr:primaryType="nt:unstructured"
+                jcr:title="About the Book Details"
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                composite="{Boolean}true">
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    name="./bookdetailswithchmap">
+                    <items jcr:primaryType="nt:unstructured">
+                        <bookname
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                            fieldLabel="pathfield"/>
-                    </fileupload>
-                </items>
-            </column>
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Book Name"
+                            name="./bookname"/>
+                        <booksubject
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                            fieldLabel="Book Subject"
+                            name="./booksubject"/>
+                        <bookpublishdate
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                            fieldLabel="Publish Date"
+                            name="./bookpublishdate"/>
+                        <nestedfield
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                            composite="{Boolean}true"
+                            fieldLabel="Book Name">
+                            <field
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                name="./nestedfield">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <text
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="ArticleTitle"
+                                        name="./text"/>
+                                    <dsc
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Article dsc"
+                                        name="./dsc"/>
+                                </items>
+                            </field>
+                        </nestedfield>
+                    </items>
+                </field>
+            </multifield>
+            <checkbox
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                fieldLabel="CheckBox"
+                name="./checkbox"/>
         </items>
     </content>
 </jcr:root>
