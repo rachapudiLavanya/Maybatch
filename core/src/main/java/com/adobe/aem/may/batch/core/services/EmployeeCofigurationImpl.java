@@ -26,10 +26,12 @@ public class EmployeeCofigurationImpl {
     public void deActivate(EmployeeConfiguration cofig)
     {
         LOG.info("deActivate () started");
+        updatConfiguaration(cofig);
     }
     @Modified
     public void update(EmployeeConfiguration cofig){
         LOG.info("update () started");
+        updatConfiguaration(cofig);
     }
     public void updatConfiguaration(EmployeeConfiguration cofig)
     {
